@@ -22,7 +22,8 @@ func main() {
 	db := godb.Connect()
 	id := godb.Insert(db,tabella,campi,valori)
 	godb.Update(db,tabella,campi,valori2,id)
-	godb.Query(db,tabella)
+	godb.QuerySelect(db,"",tabella,"ID=28")
+	//godb.Query(db,"SELECT * FROM"+tabella+" WHERE 1=1")
 	godb.Delete(db,tabella,id)
 	godb.Close(db)
 
